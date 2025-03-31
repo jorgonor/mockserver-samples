@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "4d251be5-c61d-4b7c-8260-e012dc41e8be",
+		"name": "library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2756099"
+	},
+	"item": [
+		{
+			"name": "get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:12345/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "any isbn checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9788418050022/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9788418050022",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "any isbn express checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"express\": \"1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9788418050022/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9788418050022",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "any isbn express regex checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"express\": \"0\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9788418050022/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9788418050022",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout eloquent javascript",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9781593279509/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9781593279509",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout micros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9781801072977/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9781801072977",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout Head First Java",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:12345/v1/books/9780596004651/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12345",
+					"path": [
+						"v1",
+						"books",
+						"9780596004651",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

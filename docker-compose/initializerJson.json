@@ -1,0 +1,111 @@
+[
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/v1/books"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "[{\"isbn\": \"9781593279509\", \"title\":\"Eloquent Javascript\", \"author\":\"Marijin Haverbeke\"},{\"isbn\": \"9781801072977\", \"title\":\"Microservices with Spring Boot and Spring Cloud\", \"author\":\"Magnus Larsson\"}, {\"isbn\": \"9780596004651\", \"title\":\"Head First Java\", \"author\":\"Kathy Sierra\"}]"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/9781593279509/checkout"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"OK\", \"checkoutId\": \"1\", \"maxDays\": \"14\"}"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/9781801072977/checkout"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"NOT_AVAILABLE\"}"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/9780596004651/checkout"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"OK\", \"checkoutId\": \"2\", \"maxDays\": \"14\"}"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/{isbn}/checkout",
+            "pathParameters": {
+                "isbn": ["[0-9]{13}"]
+            },
+            "body": {
+                "type": "JSON",
+                "json": "{\"express\": \"1\"}",
+                "matchType": "STRICT"
+            }
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"OK\", \"checkoutId\": \"3\", \"maxDays\": \"7\"}"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/{isbn}/checkout",
+            "pathParameters": {
+                "isbn": ["[0-9]{13}"]
+            },
+            "body": {
+                "type": "REGEX",
+                "regex": ".*\"express\".*"
+            }
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"OK\", \"checkoutId\": \"4\", \"maxDays\": \"10\"}"
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "POST",
+            "path": "/v1/books/{isbn}/checkout",
+            "pathParameters": {
+                "isbn": ["[0-9]{13}"]
+            }
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": ["application/json"]
+            },
+            "body": "{\"status\": \"OK\", \"checkoutId\": \"5\", \"maxDays\": \"14\"}"
+        }
+    }
+]
